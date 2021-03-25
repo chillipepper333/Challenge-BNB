@@ -12,8 +12,8 @@
 
 | Stap        | Taak                                           | Verwachte tijdsduur | Status |
 | ----------- | ---------------------------------------------- | ------------------- | ------ |
-| Planning    | Planning maken                                 | 00:30 u             | Bezig  |
-| Ontwerpen   | Mockup van BNB-site maken                      | 00:30 u             |        |
+| Planning    | Planning maken                                 | 00:30 u             | klaar  |
+| Ontwerpen   | Mockup van BNB-site maken                      | 00:30 u             | klaar  |
 | ...         | Styling van elementen bepalen                  | 00:20 u             |        |
 | Realiseren  | Bestanden aanmaken                             | 00:30 u             |        |
 | ...         | huisen reserveren systeem                      | 01:00 tot 02:00 u   |        |
