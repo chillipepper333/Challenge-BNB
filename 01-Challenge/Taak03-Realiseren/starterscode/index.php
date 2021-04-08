@@ -97,6 +97,9 @@ if (is_object($conn->query($sql))) { //deze if-statement controleert of een sql-
     <!-- Make sure you put this AFTER Leaflet's CSS -->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
     <link href="css/index.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -140,7 +143,6 @@ if (is_object($conn->query($sql))) { //deze if-statement controleert of een sql-
                             <input type="radio" id="bike_rental" name="faciliteiten" value="bike_rental" <?php if ($bikerentalIsChecked) echo 'checked' ?>>
                         </div>
                         <button type="submit" name="filter_submit">Filter</button>
-                    
                 </div>
             </div>
             <div class="top_right">
@@ -232,7 +234,7 @@ if (is_object($conn->query($sql))) { //deze if-statement controleert of een sql-
                             <input type="radio" id="fietsverhuur_nee" name="fietsverhuur" value="nee" checked>
                         </div>
                         <button type="submit" name="actie" value="totaal_prijs"> Bereken prijs</button>
-                        <button type="submit" name="actie" value="reserveer"> Reserveer huis</button>
+                        <button type="submit" name="actie" value="reserveer"  onclick="reserveer()"> Reserveer huis</button>
                     </form>
                 </div> 
                 <div class="currentBooking">
@@ -255,12 +257,10 @@ if (is_object($conn->query($sql))) { //deze if-statement controleert of een sql-
         ];
 
         var bubbleTexts = [
-            "test", "test", "test", "test"
+            "Ijmuiden cottage", "Assen bungalo", "Espolo entree", "Weustenrade woning"
         ];
     </script>
-    <script> 
-    
-    </script>
+    <script src="js/betaal.js"></script>
     <script src="js/place_markers.js"></script>
 </body>
 </html>

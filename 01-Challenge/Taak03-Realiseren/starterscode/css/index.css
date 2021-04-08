@@ -5,12 +5,14 @@
 header{
     background-color: #F4A261;
     color: #060C0E;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
 }
 
 main {
     display: flex;
     flex-direction: column;
-    
+    font-family: 'Open Sans', sans-serif;
 }
 
 .top{
@@ -43,6 +45,7 @@ main {
     margin-top: 10px;
     background-color: #F39B53;
 }
+
 footer {
     display: flex;
     position: static;
@@ -70,9 +73,6 @@ footer div {
     margin-left: 10px;
 }
 
-.form-control label{
-    letter-spacing: 0.15em;
-}
 
 body{
     background-color: #E9C46A;
