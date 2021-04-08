@@ -2,24 +2,47 @@
     height: 670px;
 }
 
+header{
+    background-color: #F4A261;
+    color: #060C0E;
+}
+
 main {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.top{
     display: flex;
 }
 
-main .left{
-    width: 50%;}
+.top_left{
+    width: 19%;
+    background-color: #F39B53;
+    margin-right: 10px;
+}
 
-main .right {
-    margin-left: 20px;
+.top_right{
+    width: 80%;
+    background-color: #F39B53;
+}
+
+.bottom{
+    display: flex;
+}
+
+.bottom_left{
     width: 50%;
+    margin-top: 10px;
 }
 
-.right .filter-box .homes-box {
-    width: 100%;
-    padding: 20px;
-    list-style: none;
+.bottom_right{
+    width: 49%;
+    margin-left: 10px;
+    margin-top: 10px;
+    background-color: #F39B53;
 }
-
 footer {
     display: flex;
     position: static;
@@ -29,6 +52,7 @@ footer {
     align-items: center;
     justify-content: center;
     border-top: 1px solid blue;
+    text-align: center;
 }
 
 footer div {
@@ -43,9 +67,46 @@ footer div {
 
 .form-control{
     line-height: 50px;
+    margin-left: 10px;
 }
 
 .form-control label{
     letter-spacing: 0.15em;
-
 }
+
+body{
+    background-color: #E9C46A;
+}
+
+h5{
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+h4{
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+p{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.homes-box{
+    margin-left: 10px;
+}
+
+.book{
+    margin-left: 10px;
+}
+
+.totalPriceBlock{
+    margin-left: 10px;
+}
+
+button{
+    margin-left: 40px;
+    padding: 40px;
+}
+
