@@ -14,6 +14,9 @@ $wifiIsChecked = false;
 $fireplaceIsChecked = false;
 $dishwasherIsChecked = false;
 $bikerentalIsChecked  = false;
+$fietsprijs = 0;
+$bedprijs = 0;
+
 
 $sql = "SELECT * FROM `homes`"; //Selecteer alle huisjes uit de database
 
@@ -48,10 +51,16 @@ if (isset($_GET['filter_submit'])) {
         $dishwasherIsChecked = true;
         $sql = "SELECT * FROM `homes` WHERE dishwasher_present = 1"; // query die zoekt of er een BBQ aanwezig is.
     }
+
     if ($_GET['faciliteiten'] == "bike_rental") {
         $bikerentalIsChecked = true;
         $sql = "SELECT * FROM `homes` WHERE bike_rental = 1"; // query die zoekt of er een BBQ aanwezig is.
     }
+}
+
+
+if (is_object($conn->query($sql))) { //deze if-statement controleert of een sql-query correct geschreven is en dus data ophaalt uit de DB
+    $database_gegevens = $conn->query($sql)->fetchAll(PDO::FETCH_ASSOC); //deze code laten staan
 }
 
 if (isset($_GET["actie"]))
@@ -66,22 +75,20 @@ if (isset($_GET["actie"]))
                 $prijsdagen = $prijshuis * $_GET["aantal_dagen"];
                 $prijsbeddengoed = $huisje["price_bed_sheets"];
                 $prijsfietsverhuur = $huisje["price_bike_rental"];
-                $totaalprijs = $prijsdagen+$prijspersonen;
                 if ($_GET["beddengoed"] == "ja"){
-                    $totaalprijs = $prijshuis+$prijsbeddengoed;
+                    $bedprijs = $prijsbeddengoed;
                 }
                 if ($_GET["fietsverhuur"] == "ja"){
-                    $totaalprijs = $prijshuis+$prijsfietsverhuur;
+                    $fietsprijs = $prijsfietsverhuur;
                 }
+                $totaalprijs = $prijsdagen+$prijspersonen+$fietsprijs+$bedprijs-$prijshuis;
+                if ($totaalprijs < 0){
+                    $totaalprijs = 0;
+                }
+
             endforeach;
         }
     }
-
-
-if (is_object($conn->query($sql))) { //deze if-statement controleert of een sql-query correct geschreven is en dus data ophaalt uit de DB
-    $database_gegevens = $conn->query($sql)->fetchAll(PDO::FETCH_ASSOC); //deze code laten staan
-}
-
 ?>
 
 
@@ -112,11 +119,11 @@ if (is_object($conn->query($sql))) { //deze if-statement controleert of een sql-
                 <div class="filter-box">
                     <form class="filter-form">
                         <div class="form-control">
-                            <a href="index.php">Reset Filters</a>
+                            <a class="reset" id="reset" href="index.php">Reset Filters</a>
                         </div>
                         <div class="form-control"> 
                             <label for="ligbad">Ligbad</label>
-                            <input type="radio" id="ligbad" name="faciliteiten" value="ligbad" <?php if ($bathIsChecked) echo 'checked' ?>>
+                            <input type="radio" id="ligbad" name="faciliteiten" value="ligbad" <?php if ($bathIsChecked) echo 'checked' ?> checked>
                         </div>
                         <div class="form-control">
                             <label for="zwembad">Zwembad</label>
@@ -142,7 +149,7 @@ if (is_object($conn->query($sql))) { //deze if-statement controleert of een sql-
                             <label for="Fiets verhuur">Fiets verhuur</label>
                             <input type="radio" id="bike_rental" name="faciliteiten" value="bike_rental" <?php if ($bikerentalIsChecked) echo 'checked' ?>>
                         </div>
-                        <button type="submit" name="filter_submit">Filter</button>
+                        <button type="submit" id="submit" name="filter_submit">Filter</button>
                 </div>
             </div>
             <div class="top_right">
