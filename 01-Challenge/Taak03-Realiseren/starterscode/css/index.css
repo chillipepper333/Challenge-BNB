@@ -35,9 +35,15 @@ main {
     margin-right: 10px;
 }
 
-.top_right{
-    width: 80%;
+.top_middle{
+    width: 60%;
     background-color: #335F70;
+}
+
+.top_right{
+    width: 20%;
+    background-color: #335F70;
+    margin-left: 10px;
 }
 
 .bottom{
@@ -136,4 +142,11 @@ button{
     padding:50px 92px;
     font-family: 'Open Sans', sans-serif;
     margin-left: 10px;
+}
+
+img{
+    height: 233px;
+    width: 233px;
+    margin-left: 32px;
+    margin-top: 5px;
 }

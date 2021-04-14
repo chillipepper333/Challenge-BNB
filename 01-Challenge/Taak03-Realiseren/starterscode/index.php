@@ -138,7 +138,7 @@ if (isset($_GET["actie"]))
                             <input type="radio" id="wifi" name="faciliteiten" value="wifi" <?php if ($wifiIsChecked) echo 'checked' ?>>
                         </div>
                         <div class="form-control">
-                            <label for="fireplace">openhaart</label>
+                            <label for="fireplace">openhaard</label>
                             <input type="radio" id="fireplace" name="faciliteiten" value="fireplace" <?php if ($fireplaceIsChecked) echo 'checked' ?>>
                         </div>
                         <div class="form-control">
@@ -152,7 +152,7 @@ if (isset($_GET["actie"]))
                         <button type="submit" id="submit" name="filter_submit">Filter</button>
                 </div>
             </div>
-            <div class="top_right">
+            <div class="top_middle">
                 <div class="homes-box">
                     <?php if (isset($database_gegevens) && $database_gegevens != null) : ?>
                         <?php foreach ($database_gegevens as $huisje) : ?>
@@ -200,6 +200,15 @@ if (isset($_GET["actie"]))
                         <?php endforeach; ?>
                     <?php endif; ?>
                 </div>   
+            </div>
+            <div class="top_right">
+                <?php if (isset($database_gegevens) && $database_gegevens != null) : ?>
+                    <?php foreach ($database_gegevens as $huisje) : ?>
+                        <div class="foto">
+                            <img src="images/<?php echo $huisje['image'] ?>">
+                        </div>
+                    <?php endforeach; ?>
+                <?php endif; ?>
             </div>
         </div>
         <div class="bottom">
