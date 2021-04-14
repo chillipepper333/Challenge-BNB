@@ -152,63 +152,82 @@ if (isset($_GET["actie"]))
                         <button type="submit" id="submit" name="filter_submit">Filter</button>
                 </div>
             </div>
-            <div class="top_middle">
+            <div class="top_right">
                 <div class="homes-box">
                     <?php if (isset($database_gegevens) && $database_gegevens != null) : ?>
                         <?php foreach ($database_gegevens as $huisje) : ?>
+                            <div class="naam-kenmerk">
                             <h4>
                                 <?php echo $huisje['name']; ?>
                             </h4>
-
+                            
                             <p>
                                 <?php echo $huisje['description'] ?>
                             </p>
-                            <div class="kenmerken">
-                                <h5>Kenmerken</h5>
-                                <ul>
-                                    <?php // laat het kenmerk zien onder de informatie van huisjes
-                                        if ($huisje['bath_present'] ==  1) {
-                                            echo "<li>Er is een ligbad!</li>";
-                                        }
+                                <div class="kenmerken">
+                                    <div>
+                                        <h5>Kenmerken</h5>
+                                        <ul>
+                                            <?php // laat het kenmerk zien onder de informatie van huisjes
+                                                if ($huisje['bath_present'] ==  1) {
+                                                    echo "<li>Er is een ligbad!</li>";
+                                                }
 
-                                        if ($huisje['pool_present'] ==  1) {
-                                            echo "<li>Er is een zwembad!</li>";
-                                        }
+                                                if ($huisje['pool_present'] ==  1) {
+                                                    echo "<li>Er is een zwembad!</li>";
+                                                }
 
-                                        if ($huisje['bbq_present'] ==  1) {
-                                            echo "<li>Er is een bbq!</li>";
-                                        }
+                                                if ($huisje['bbq_present'] ==  1) {
+                                                    echo "<li>Er is een bbq!</li>";
+                                                }
 
-                                        if ($huisje['wifi_present'] ==  1) {
-                                            echo "<li>Er is wifi!</li>";
-                                        }
+                                                if ($huisje['wifi_present'] ==  1) {
+                                                    echo "<li>Er is wifi!</li>";
+                                                }
 
-                                        if ($huisje['fireplace_present'] ==  1) {
-                                            echo "<li>Er is een openhaard!</li>";
-                                        }
+                                                if ($huisje['fireplace_present'] ==  1) {
+                                                    echo "<li>Er is een open haard!</li>";
+                                                }
 
-                                        if ($huisje['dishwasher_present'] ==  1) {
-                                            echo "<li>Er is een vaatwasser!</li>";
-                                        }
+                                                if ($huisje['dishwasher_present'] ==  1) {
+                                                    echo "<li>Er is een vaatwasser!</li>";
+                                                }
 
-                                        if ($huisje['bike_rental'] ==  1) {
-                                            echo "<li>Er is een fiets verhuur in de buurt!</li>";
-                                        }
-                                    ?>
-                                </ul>
+                                                if ($huisje['bike_rental'] ==  1) {
+                                                    echo "<li>Er is een fiets verhuur in de buurt!</li>";
+                                                }
+                                            ?> 
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h5>De prijs per persoon per nacht</h5>   
+                                        Totale prijs &euro;
+                                        <?php 
+                                            echo $huisje['price_p_p_p_n'];
+                                        ?>
+                                    </div>
+                                    <div class="prijs">
+                                        <h5>De prijs voor beddengoed</h5>
+                                        Totale prijs &euro;
+                                        <?php 
+                                            echo $huisje['price_bed_sheets'];
+                                        ?>
+                                    </div>
+                                    <div class="prijs">
+                                        <h5>De prijs voor de fiets verhuur</h5>
+                                        Totale prijs &euro;
+                                        <?php 
+                                            echo $huisje['price_bike_rental'];
+                                        ?>
+                                    </div class="prijs">
+                                </div>
+                            </div>
+                            <div class="foto">
+                                <img src="images/<?php echo $huisje['image'] ?>">
                             </div>
                         <?php endforeach; ?>
                     <?php endif; ?>
                 </div>   
-            </div>
-            <div class="top_right">
-                <?php if (isset($database_gegevens) && $database_gegevens != null) : ?>
-                    <?php foreach ($database_gegevens as $huisje) : ?>
-                        <div class="foto">
-                            <img src="images/<?php echo $huisje['image'] ?>">
-                        </div>
-                    <?php endforeach; ?>
-                <?php endif; ?>
             </div>
         </div>
         <div class="bottom">

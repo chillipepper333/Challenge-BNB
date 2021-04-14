@@ -9,7 +9,7 @@
 filter knop kleiner maken (vergelijkbaar youtube subscribe knop)
 er voor zorgen dat bij de woning een plek van de googlemaps is  
 +punten
-ziet er mooi
+ziet er mooi uit
 kon geen bugs vinden
   
 ## Van wie hebt je feedback gevraagd?
