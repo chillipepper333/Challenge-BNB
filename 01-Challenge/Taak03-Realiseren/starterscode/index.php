@@ -184,7 +184,7 @@ if (isset($_GET["actie"]))
                                         }
 
                                         if ($huisje['fireplace_present'] ==  1) {
-                                            echo "<li>Er is een open haard!</li>";
+                                            echo "<li>Er is een openhaard!</li>";
                                         }
 
                                         if ($huisje['dishwasher_present'] ==  1) {
