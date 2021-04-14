@@ -1,7 +1,7 @@
 # Link naar je Github Pages
 
-Student : `studentnaam`
+Student : Wouter Baas
 
-Klas    : `klascode`
+Klas    : LCTAOO0d
 
-Link    : [github_username.github.io](github_username.github.io)
+Link    : https://github.com/chillipepper333/Challenge-BNB/tree/main/01-Challenge/Taak03-Realiseren/starterscode
