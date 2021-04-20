@@ -123,31 +123,31 @@ if (isset($_GET["actie"]))
                         </div>
                         <div class="form-control"> 
                             <label for="ligbad">Ligbad</label>
-                            <input type="radio" id="ligbad" name="faciliteiten" value="ligbad" <?php if ($bathIsChecked) echo 'checked' ?> checked>
+                            <input type="checkbox" id="ligbad" name="faciliteiten" value="ligbad" <?php if ($bathIsChecked) echo 'checked' ?> checked>
                         </div>
                         <div class="form-control">
                             <label for="zwembad">Zwembad</label>
-                            <input type="radio" id="zwembad" name="faciliteiten" value="zwembad" <?php if ($poolIsChecked) echo 'checked' ?>>
+                            <input type="checkbox" id="zwembad" name="faciliteiten" value="zwembad" <?php if ($poolIsChecked) echo 'checked' ?>>
                         </div>
                         <div class="form-control">
                             <label for="bbq">bbq</label>
-                            <input type="radio" id="bbq" name="faciliteiten" value="bbq" <?php if ($bbqIsChecked) echo 'checked' ?>>
+                            <input type="checkbox" id="bbq" name="faciliteiten" value="bbq" <?php if ($bbqIsChecked) echo 'checked' ?>>
                         </div>
                         <div class="form-control">
                             <label for="wifi">wifi</label>
-                            <input type="radio" id="wifi" name="faciliteiten" value="wifi" <?php if ($wifiIsChecked) echo 'checked' ?>>
+                            <input type="checkbox" id="wifi" name="faciliteiten" value="wifi" <?php if ($wifiIsChecked) echo 'checked' ?>>
                         </div>
                         <div class="form-control">
                             <label for="fireplace">openhaard</label>
-                            <input type="radio" id="fireplace" name="faciliteiten" value="fireplace" <?php if ($fireplaceIsChecked) echo 'checked' ?>>
+                            <input type="checkbox" id="fireplace" name="faciliteiten" value="fireplace" <?php if ($fireplaceIsChecked) echo 'checked' ?>>
                         </div>
                         <div class="form-control">
                             <label for="dishwasher">vaatwasser</label>
-                            <input type="radio" id="dishwasher" name="faciliteiten" value="dishwasher" <?php if ($dishwasherIsChecked) echo 'checked' ?>>
+                            <input type="checkbox" id="dishwasher" name="faciliteiten" value="dishwasher" <?php if ($dishwasherIsChecked) echo 'checked' ?>>
                         </div>
                             <div class="form-control">
                             <label for="Fiets verhuur">Fiets verhuur</label>
-                            <input type="radio" id="bike_rental" name="faciliteiten" value="bike_rental" <?php if ($bikerentalIsChecked) echo 'checked' ?>>
+                            <input type="checkbox" id="bike_rental" name="faciliteiten" value="bike_rental" <?php if ($bikerentalIsChecked) echo 'checked' ?>>
                         </div>
                         <button type="submit" id="submit" name="filter_submit">Filter</button>
                 </div>
@@ -196,7 +196,7 @@ if (isset($_GET["actie"]))
                                                 if ($huisje['bike_rental'] ==  1) {
                                                     echo "<li>Er is een fiets verhuur in de buurt!</li>";
                                                 }
-                                                
+
                                                 if ($huisje['max_capacity'] ==  4) {
                                                     echo "<li>Er kunnen maximaal 4 personen in!</li>";
                                                 }
