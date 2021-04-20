@@ -196,6 +196,18 @@ if (isset($_GET["actie"]))
                                                 if ($huisje['bike_rental'] ==  1) {
                                                     echo "<li>Er is een fiets verhuur in de buurt!</li>";
                                                 }
+                                                
+                                                if ($huisje['max_capacity'] ==  4) {
+                                                    echo "<li>Er kunnen maximaal 4 personen in!</li>";
+                                                }
+
+                                                if ($huisje['max_capacity'] ==  6) {
+                                                    echo "<li>Er kunnen maximaal 6 personen in!</li>";
+                                                }
+
+                                                if ($huisje['max_capacity'] ==  8) {
+                                                    echo "<li>Er kunnen maximaal 8 personen in!</li>";
+                                                }
                                             ?> 
                                         </ul>
                                     </div>
