@@ -123,7 +123,7 @@ if (isset($_GET["actie"]))
                         </div>
                         <div class="form-control"> 
                             <label for="ligbad">Ligbad</label>
-                            <input type="checkbox" id="ligbad" name="faciliteiten" value="ligbad" <?php if ($bathIsChecked) echo 'checked' ?> checked>
+                            <input type="checkbox" id="ligbad" name="faciliteiten" value="ligbad" <?php if ($bathIsChecked) echo 'checked' ?>>
                         </div>
                         <div class="form-control">
                             <label for="zwembad">Zwembad</label>
